@@ -1,0 +1,117 @@
+.package-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.package-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 230, 118, 0.1);
+  border-color: rgba(0, 230, 118, 0.3);
+}
+
+.package-card.popular {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 20px rgba(0, 230, 118, 0.15);
+}
+
+.popular-badge {
+  background: var(--primary-green);
+  color: #000;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.package-header {
+  padding: 2.5rem 2rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.package-title {
+  font-size: 1.8rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.package-price {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.currency {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-right: 0.2rem;
+}
+
+.amount {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+
+.duration {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-left: 0.2rem;
+}
+
+.package-odds {
+  display: inline-block;
+  background: rgba(255, 215, 0, 0.1);
+  color: var(--gold);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.package-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.package-features {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.package-features li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+.package-features svg {
+  width: 20px;
+  height: 20px;
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+.package-btn {
+  width: 100%;
+  text-align: center;
+}

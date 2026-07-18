@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String   // bcrypt hashed
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Ticket {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  packageType String   // GOLO_GOLO | BIG_STARKER | VIP | FREE
+  imageUrl    String?
+  isActive    Boolean  @default(true)
+  postedAt    DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model WinReceipt {
+  id          String   @id @default(cuid())
+  imageUrl    String
+  description String?
+  amount      String?
+  postedAt    DateTime @default(now())
+}
+
+model FreeTicket {
+  id        String   @id @default(cuid())
+  content   String
+  imageUrl  String?
+  isActive  Boolean  @default(true)
+  postedAt  DateTime @default(now())
+}
+
+model Partner {
+  id        String   @id @default(cuid())
+  name      String
+  imageUrl  String
+  url       String?  // Optional affiliate link
+  createdAt DateTime @default(now())
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  name      String
+  rating    Int      @default(5)
+  comment   String
+  createdAt DateTime @default(now())
+}
