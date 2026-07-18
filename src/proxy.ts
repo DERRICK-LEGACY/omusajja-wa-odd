@@ -8,7 +8,7 @@ const SECRET = new TextEncoder().encode(
 
 const COOKIE_NAME = 'galactico_admin_session';
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Only guard /admin paths (but NOT /admin/login)
