@@ -4,6 +4,8 @@ import { jwtVerify } from 'jose';
 import { COOKIE_NAME } from '@/lib/auth';
 import { cookies } from 'next/headers';
 
+export const dynamic = "force-dynamic";
+
 const prisma = new PrismaClient();
 const SECRET = new TextEncoder().encode(process.env.JWT_SECRET || 'galactico-super-secret-jwt-2025-omusajja');
 
